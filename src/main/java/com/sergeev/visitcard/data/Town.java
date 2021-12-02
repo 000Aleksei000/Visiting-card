@@ -20,20 +20,20 @@ public class Town {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
 
     @Column(name = "townName")
-    String name;
+    private String name;
 
 
     @JoinColumn(name = "Country_Id")
     @ManyToOne(fetch = FetchType.EAGER)
     @NonNull
-    Country country;
+    private Country country;
 
     @OneToMany(fetch = FetchType.EAGER , mappedBy = "town")
     @NonNull
-    Set<People> peoples = new HashSet<>();
+    private Set<People> peoples = new HashSet<>();
 
 
     public void addPeople(People people) {

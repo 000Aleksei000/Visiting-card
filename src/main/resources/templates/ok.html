@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th = http://www.thymeleaf.org>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -18,8 +18,14 @@
             <input type="submit" value="submit"><br>
         </form>
     </div>
-    <div>  </div>
-    <div>  </div>
+    <div>
+        <p>Общее количество городов : <span th:text = "${countTown}"></span></p>
+    </div>
+    <div class="townList">
+        <ul th:each="town : ${towns}">
+            <li th:text="${town.getName()}"></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

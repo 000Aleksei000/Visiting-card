@@ -9,6 +9,8 @@ import com.sergeev.visitcard.repository.TownRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MappingService {
 
@@ -64,5 +66,10 @@ public class MappingService {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public List<Town> getTowns() {
+        List<Town> all = townRep.getTownByIdAfter(0L);
+        return all;
     }
 }
