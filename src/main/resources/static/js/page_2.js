@@ -44,7 +44,9 @@ function startJsWithTimer() {
                 let townsUl = createUlTown(townsAndCountries.towns);
                 let coutriesUl = createUlCountries(townsAndCountries.countries);
                 console.log(coutriesUl)
+                townsList.innerHTML = '';
                 townsList.insertAdjacentElement('afterbegin', townsUl);
+                countriesList.innerHTML = '';
                 countriesList.insertAdjacentElement('afterbegin', coutriesUl);
             }
         });
