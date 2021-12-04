@@ -1,15 +1,11 @@
 package com.sergeev.visitcard.web.model.pg2;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.google.gson.Gson;
-import com.sergeev.visitcard.data.Country;
-import com.sergeev.visitcard.data.Town;
-import lombok.AllArgsConstructor;
+import com.sergeev.visitcard.data.crud.Country;
+import com.sergeev.visitcard.data.crud.Town;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 @Data

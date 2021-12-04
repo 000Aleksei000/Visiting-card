@@ -1,7 +1,6 @@
 package com.sergeev.visitcard.repository;
 
-import com.sergeev.visitcard.data.Country;
-import org.hibernate.mapping.Collection;
+import com.sergeev.visitcard.data.crud.Country;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

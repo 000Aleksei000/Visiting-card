@@ -1,7 +1,6 @@
-package com.sergeev.visitcard.data;
+package com.sergeev.visitcard.data.crud;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

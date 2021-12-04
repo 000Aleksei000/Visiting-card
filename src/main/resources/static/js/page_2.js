@@ -1,12 +1,12 @@
-/*Отложенный старт джава скрипта, так как элементов изначально нет на странице*/
-let elementById = document.getElementById("info_2");
-
-elementById.addEventListener("click", startJs);
-
-function startJs(evt) {
-    let timer = setTimeout(startJsWithTimer, 700, evt);
-}
-/*Основная логика скрипта*/
+// /*Отложенный старт джава скрипта, так как элементов изначально нет на странице*/
+// let elementById = document.getElementById("info_2");
+//
+// elementById.addEventListener("click", startJs);
+//
+// function startJs(evt) {
+//     let timer = setTimeout(startJsWithTimer, 700, evt);
+// }
+// /*Основная логика скрипта*/
 
 
     let name, lastName, age, town, country;
@@ -14,8 +14,6 @@ function startJs(evt) {
     let form_inp_1, form_inp_2, form_inp_3, form_inp_4, form_inp_5, form_btn , countTowns, townsList, countriesList,
     countCountries;
 
-
-function startJsWithTimer() {
     form_inp_1 = document.getElementById("form_inp_1")
     form_inp_2 = document.getElementById("form_inp_2")
     form_inp_3 = document.getElementById("form_inp_3")
@@ -84,7 +82,7 @@ function startJsWithTimer() {
         form_inp_3.value = '';
         form_inp_4.value = '';
         form_inp_5.value = '';
-    }
+
 }
 
 function createPeople(name, lastName, age, town, country) {

@@ -3,39 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link  type="text/css" rel="stylesheet" href="css/page_2.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
+    </style>
+
+
+    <link rel="stylesheet" href="css/mainPage.css">
+    <link rel="stylesheet" href="css/page_2.css">
+
 </head>
 <body>
-<div class="mainBodyPg_2">
-<div>Данный пример показывает ляля трополя <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, impedit, sed. Accusantium ad adipisci alias amet atque corporis cupiditate deserunt doloremque fugit id illo itaque labore maxime, mollitia neque odio omnis praesentium ratione repellendus ut vitae voluptas voluptatibus voluptatum. Aliquam asperiores deserunt doloremque, dolorum inventore nulla obcaecati quasi reiciendis repellendus.</div>
-<div class="body_pg2" id = pg_2>
-    <div class="crud_form">
-        <input type="text" name="name" placeholder="Name" id = "form_inp_1"> <br>
-        <input type="text" name="lastName" placeholder="LastName" id = "form_inp_2"><br>
-        <input type="number" name="age" placeholder="Age" id = "form_inp_3"><br>
-        <input type="text" name="town" placeholder="Town" id = "form_inp_4"><br>
-        <input type="text" name="country" placeholder="Country" id = "form_inp_5"><br>
-        <button type="button" id ="pg_2_form_btn">liveBtn</button>
+
+<div class="header">
+    <a href="/" id = "pg_1">Резюме на практике.</a>
+</div>
+
+
+<div class="body">
+    <div class="info">
+        <p>Реализации</p>
+        <div id = "info_2"><a href="/save">Классическое crud приложение</a></div>
+        <div>logger</div>
+        <div>Капча - если реализую</div>
+        <div id = "basket_pg"><a href="basket">Продуктовая корзина</a></div>
+        <div></div>
     </div>
-    <div class="body_pg2_box2">
-        <p>Общее количество городов : <span th:text = "${countTown}" id = "countTowns"></span></p>
-    </div>
-    <div class="townList" id = "townsListId">
-        <ul th:each="town : ${towns}">
-            <li th:text="${town.getName()}"></li>
-        </ul>
-    </div>
-    <div class="body_pg2_box2">
-        <p>Общее количество Стран : <span th:text = "${countCountries}" id = "countCountries"></span></p>
-    </div>
-    <div class="countyList" id = "countryListId">
-        <ul th:each="country : ${countries}">
-            <li th:text="${country.getName()}"></li>
-        </ul>
+    <div class="description" id = "interactive">
+        <div class="mainBodyPg_2">
+            <div>Данный пример показывает ляля трополя <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, impedit, sed. Accusantium ad adipisci alias amet atque corporis cupiditate deserunt doloremque fugit id illo itaque labore maxime, mollitia neque odio omnis praesentium ratione repellendus ut vitae voluptas voluptatibus voluptatum. Aliquam asperiores deserunt doloremque, dolorum inventore nulla obcaecati quasi reiciendis repellendus.</div>
+            <div class="body_pg2" id = pg_2>
+                <div class="crud_form">
+                    <input type="text" name="name" placeholder="Name" id = "form_inp_1"> <br>
+                    <input type="text" name="lastName" placeholder="LastName" id = "form_inp_2"><br>
+                    <input type="number" name="age" placeholder="Age" id = "form_inp_3"><br>
+                    <input type="text" name="town" placeholder="Town" id = "form_inp_4"><br>
+                    <input type="text" name="country" placeholder="Country" id = "form_inp_5"><br>
+                    <button type="button" id ="pg_2_form_btn">liveBtn</button>
+                </div>
+                <div class="body_pg2_box2">
+                    <p>Общее количество городов : <span th:text = "${countTown}" id = "countTowns"></span></p>
+                </div>
+                <div class="townList" id = "townsListId">
+                    <ul th:each="town : ${towns}">
+                        <li th:text="${town.getName()}"></li>
+                    </ul>
+                </div>
+                <div class="body_pg2_box2">
+                    <p>Общее количество Стран : <span th:text = "${countCountries}" id = "countCountries"></span></p>
+                </div>
+                <div class="countyList" id = "countryListId">
+                    <ul th:each="country : ${countries}">
+                        <li th:text="${country.getName()}"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="footer">
+
 </div>
 </body>
 </html>
 
-<script type="text/javascript" src="js/page_2_real.js"></script>
+<script type="text/javascript" src="js/page_2.js"></script>
