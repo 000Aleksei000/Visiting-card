@@ -1,6 +1,8 @@
 package com.sergeev.visitcard.data;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,8 +27,10 @@ public class Country {
     @Column(name = "name")
     private String name;
 
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "country")
     private Set<Town> towns = new HashSet<>();
+
 
     @OneToMany(fetch = FetchType.EAGER , cascade = CascadeType.ALL, mappedBy = "country")
     private Set<People> peoples = new HashSet<>();
@@ -54,4 +58,6 @@ public class Country {
     public int hashCode() {
         return Objects.hash(name);
     }
+
+
 }

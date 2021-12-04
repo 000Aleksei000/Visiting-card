@@ -1,6 +1,7 @@
 package com.sergeev.visitcard.data;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
@@ -35,14 +36,28 @@ public class People {
     @NonNull
     private int age;
 
+
     @JoinColumn(name = "Country_Id")
     @NonNull
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Country country;
+
 
     @JoinColumn(name = "Town_Id")
     @NonNull
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Town town;
 
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", country=" + country.getName() +
+                ", town=" + town.getName() +
+                '}';
+    }
 }

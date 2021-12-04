@@ -72,4 +72,8 @@ public class MappingService {
         List<Town> all = townRep.getTownByIdAfter(0L);
         return all;
     }
+
+    public List<Country> getCountries() {
+        return countryRep.getCountryByIdAfter(0L);
+    }
 }

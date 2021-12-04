@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = http://www.thymeleaf.org>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  type="text/css" rel="stylesheet" href="css/page_2.css">
+</head>
+<body>
+<div class="mainBodyPg_2">
+<div>Данный пример показывает ляля трополя <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, impedit, sed. Accusantium ad adipisci alias amet atque corporis cupiditate deserunt doloremque fugit id illo itaque labore maxime, mollitia neque odio omnis praesentium ratione repellendus ut vitae voluptas voluptatibus voluptatum. Aliquam asperiores deserunt doloremque, dolorum inventore nulla obcaecati quasi reiciendis repellendus.</div>
+<div class="body_pg2" id = pg_2>
+    <div class="crud_form">
+        <input type="text" name="name" placeholder="Name" id = "form_inp_1"> <br>
+        <input type="text" name="lastName" placeholder="LastName" id = "form_inp_2"><br>
+        <input type="number" name="age" placeholder="Age" id = "form_inp_3"><br>
+        <input type="text" name="town" placeholder="Town" id = "form_inp_4"><br>
+        <input type="text" name="country" placeholder="Country" id = "form_inp_5"><br>
+        <button type="button" id ="pg_2_form_btn">liveBtn</button>
+    </div>
+    <div class="body_pg2_box2">
+        <p>Общее количество городов : <span th:text = "${countTown}" id = "countTowns"></span></p>
+    </div>
+    <div class="townList" id = "townsListId">
+        <ul th:each="town : ${towns}">
+            <li th:text="${town.getName()}"></li>
+        </ul>
+    </div>
+    <div class="body_pg2_box2">
+        <p>Общее количество Стран : <span th:text = "${countCountries}" id = "countCountries"></span></p>
+    </div>
+    <div class="countyList" id = "countryListId">
+        <ul th:each="country : ${countries}">
+            <li th:text="${country.getName()}"></li>
+        </ul>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript" src="js/page_2_real.js"></script>

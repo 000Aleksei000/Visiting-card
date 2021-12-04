@@ -1,5 +1,7 @@
 package com.sergeev.visitcard.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +27,6 @@ public class Town {
     @Column(name = "townName")
     private String name;
 
-
     @JoinColumn(name = "Country_Id")
     @ManyToOne(fetch = FetchType.EAGER)
     @NonNull
@@ -42,7 +43,6 @@ public class Town {
     }
 
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,4 +55,5 @@ public class Town {
     public int hashCode() {
         return Objects.hash(name);
     }
+
 }
