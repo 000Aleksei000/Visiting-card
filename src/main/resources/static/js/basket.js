@@ -4,6 +4,52 @@ let basketList = document.getElementById('basketList')
 fillingGrid()
 
 
+setTimeout(addListener, 1000);
+
+
+
+
+
+
+function addListener() {
+    let divs = basketList.querySelectorAll('div');
+    divs.forEach(function (elem) {
+        let button = elem.querySelector('button');
+        button.addEventListener('click' , addProductInBasket)
+
+    })
+}
+
+function addProductInBasket(evt) {
+    let name = this.parentNode.querySelector('nav').innerText;
+    let node = this.parentNode;
+    let req = createRequest(name)
+    //
+    let ajax = new XMLHttpRequest();
+    ajax.open('POST', 'http://localhost:8880/basketServ/deleteFromBasket', true);
+    ajax.setRequestHeader('Content-type', 'application/json')
+    ajax.send(JSON.stringify(req))
+    ajax.onreadystatechange = function() {
+        if(ajax.readyState === 4 && ajax.status === 200) {
+            node.remove();
+            // fillingGrid()
+            // setTimeout(addListener, 1000);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function fillingGrid() {
     let ajax = new XMLHttpRequest();
@@ -41,12 +87,12 @@ function createDiv(name, price, quantity) {
     button.innerHTML = "Delete";
     input.type = 'number';
     input.placeholder = 'quantity';
-    input.value = '1'
+    input.value = quantity
     input.min = '1';
     input.innerHTML = "1";
-    navPrice.innerHTML = "Price: " + price;
-    navQuantity.innerHTML = "Quantity: " + quantity;
-    navName.innerHTML = "Name: "+ name;
+    navPrice.innerHTML = price;
+    navQuantity.innerHTML = quantity;
+    navName.innerHTML = name;
 
     let elem = document.createElement('div');
     elem.className = 'box';
@@ -54,9 +100,16 @@ function createDiv(name, price, quantity) {
     elem.insertAdjacentElement('afterbegin', document.createElement('br'))
     elem.insertAdjacentElement('afterbegin', input)
     elem.insertAdjacentElement('afterbegin', navPrice)
-    elem.insertAdjacentElement('afterbegin', navQuantity)
+    // elem.insertAdjacentElement('afterbegin', navQuantity)
     elem.insertAdjacentElement('afterbegin', navName)
     elem.insertAdjacentElement('afterbegin', img);
 
     return elem;
+}
+
+
+function createRequest(name) {
+    return{
+        name,
+    }
 }

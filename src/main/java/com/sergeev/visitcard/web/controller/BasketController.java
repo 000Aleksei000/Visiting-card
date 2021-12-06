@@ -63,4 +63,14 @@ public class BasketController {
         }
         return resp;
     }
+
+    @PostMapping(value = "deleteFromBasket", consumes = "application/json")
+    public void deleteFromBasket(HttpServletRequest request, @RequestBody Product product) {
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("cookieForBasket")) {
+                basketService.deleteFromBasket(cookie.getValue(), product.getName());
+            }
+        }
+    }
 }

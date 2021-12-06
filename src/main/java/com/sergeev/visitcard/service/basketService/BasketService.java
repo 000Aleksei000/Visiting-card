@@ -13,7 +13,9 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.Cookie;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class BasketService {
@@ -74,5 +76,12 @@ public class BasketService {
 
     public Costumer getCostumerByCookie(String cookie) {
         return costumerRep.getByCookie(cookie);
+    }
+
+    public void deleteFromBasket(String cookie, String prodName) {
+        Costumer costumer = costumerRep.getByCookie(cookie);
+        Product product = productRep.getByProdName(prodName);
+        InfoProdCost info = infoProdCostRep.getByCostumerAndProduct(costumer, product);
+        infoProdCostRep.deleteById(info.getId());
     }
 }
