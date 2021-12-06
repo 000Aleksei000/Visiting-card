@@ -1,11 +1,11 @@
-package com.sergeev.visitcard.service;
+package com.sergeev.visitcard.service.crudService;
 
 import com.sergeev.visitcard.data.crud.Country;
 import com.sergeev.visitcard.data.crud.People;
 import com.sergeev.visitcard.data.crud.Town;
-import com.sergeev.visitcard.repository.CountryRep;
-import com.sergeev.visitcard.repository.PeopleRep;
-import com.sergeev.visitcard.repository.TownRep;
+import com.sergeev.visitcard.repository.crudRepo.CountryRep;
+import com.sergeev.visitcard.repository.crudRepo.PeopleRep;
+import com.sergeev.visitcard.repository.crudRepo.TownRep;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

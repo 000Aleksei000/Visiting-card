@@ -1,7 +1,7 @@
 package com.sergeev.visitcard.web.controller;
 
 
-import com.sergeev.visitcard.service.MappingService;
+import com.sergeev.visitcard.service.crudService.MappingService;
 import com.sergeev.visitcard.web.model.pg2.PeopleInfoReq;
 import com.sergeev.visitcard.web.model.pg2.DbInfoReq;
 import org.springframework.beans.factory.annotation.Autowired;

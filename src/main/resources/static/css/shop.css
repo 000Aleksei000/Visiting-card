@@ -1,0 +1,14 @@
+.body_basket_pg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+}
+
+.basketImg{
+    text-align: right;
+}
+
+.body_basket_pg div input{
+    /*background-color: red;*/
+}

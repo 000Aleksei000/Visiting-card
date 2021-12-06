@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th = http://www.thymeleaf.org>
 <head>
     <meta charset="UTF-8">
-    <title>basket</title>
+    <title>Title</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
     </style>
+
+
     <link rel="stylesheet" href="css/mainPage.css">
-    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" href="css/shop.css">
+
 </head>
 <body>
 
@@ -25,12 +28,12 @@
         <div id = "basket_pg"><a href="/shop">Продуктовая корзина</a></div>
         <div></div>
     </div>
-
-    <span class="basketInfo">У вас в корзине имеется:</span>
     <div class="description" id = "interactive">
+        <div class="basketImg">
+            <img src="img/basketP.png" id = "goToBasket">
+        </div>
 
-        <div id = 'basketList' class="basketList">
-
+        <div class="body_basket_pg" id = "body_basket">
         </div>
 
     </div>
@@ -42,4 +45,4 @@
 </body>
 </html>
 
-<script type="text/javascript" src="js/basket.js"></script>
+<script type="text/javascript" src="js/shop.js"></script>

@@ -1,4 +1,4 @@
-package com.sergeev.visitcard.repository;
+package com.sergeev.visitcard.repository.crudRepo;
 
 import com.sergeev.visitcard.data.crud.Country;
 import org.springframework.data.repository.CrudRepository;

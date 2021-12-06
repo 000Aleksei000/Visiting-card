@@ -37,7 +37,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
 .header{
-    display: grid;
+    /*display: grid;*/
     height: 300px;
     background-color: #9317ff;
     font-family: Roboto , sans-serif;

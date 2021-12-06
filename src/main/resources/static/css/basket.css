@@ -1,5 +1,0 @@
-.body_basket_pg {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 100px;
-}
