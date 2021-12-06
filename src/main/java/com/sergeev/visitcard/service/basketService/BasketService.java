@@ -72,5 +72,7 @@ public class BasketService {
         return productRep.getAllByProdIdAfter(0L);
     }
 
-    
+    public Costumer getCostumerByCookie(String cookie) {
+        return costumerRep.getByCookie(cookie);
+    }
 }

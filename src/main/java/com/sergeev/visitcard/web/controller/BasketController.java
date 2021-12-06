@@ -2,6 +2,7 @@ package com.sergeev.visitcard.web.controller;
 
 import com.sergeev.visitcard.service.basketService.BasketService;
 import com.sergeev.visitcard.web.model.bucket.AddProductToBasketReq;
+import com.sergeev.visitcard.web.model.bucket.Product;
 import com.sergeev.visitcard.web.model.bucket.ProductsListResp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +52,15 @@ public class BasketController {
         return resp;
     }
 
-
-
+    @GetMapping(value = "/getProductsByCookie")
+    public ProductsListResp getProductsByCookie(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        ProductsListResp resp = new ProductsListResp();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("cookieForBasket")) {
+                resp.fillProductsByCookie(basketService,cookie.getValue());
+            }
+        }
+        return resp;
+    }
 }

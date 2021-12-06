@@ -1,6 +1,8 @@
 package com.sergeev.visitcard.web.model.bucket;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.sergeev.visitcard.data.basket.Costumer;
+import com.sergeev.visitcard.data.basket.InfoProdCost;
 import com.sergeev.visitcard.service.basketService.BasketService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,6 +41,14 @@ public class ProductsListResp {
     }
 
     public void fillProductsByCookie(BasketService basketService, String cookie) {
-
+        products = new ArrayList<>();
+        Costumer costumer = basketService.getCostumerByCookie(cookie);
+        for(InfoProdCost infoProdCost : costumer.getInfoProdCosts()){
+            Product product = new Product();
+            product.setQuantity(infoProdCost.getQuantity());
+            product.setName(infoProdCost.getProduct().getProdName());
+            product.setPrice(infoProdCost.getProduct().getPrice());
+            products.add(product);
+        }
     }
 }
