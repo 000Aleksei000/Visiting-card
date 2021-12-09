@@ -12,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("basketServ")
-public class BasketController {
+public class BasketServController {
 
     private BasketService basketService;
 
     @Autowired
-    public BasketController(BasketService basketService) {
+    public BasketServController(BasketService basketService) {
         this.basketService = basketService;
     }
 

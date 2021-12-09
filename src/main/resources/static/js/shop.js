@@ -16,7 +16,7 @@ function goToBasket(evt) {
     window.location = 'http://localhost:8880/basket';
 }
 
-
+getCountProduct();
 
 
 
@@ -78,7 +78,7 @@ function createDiv(name, price) {
     let img = document.createElement('img');
     img.src = `img/fruit/${name}.png`
 
-    button.innerHTML = "Add to bucket";
+    button.innerHTML = "Add to basket";
     input.type = 'number';
     input.placeholder = 'quantity';
     input.value = '1'
@@ -122,7 +122,7 @@ function addProductInBasket(evt) {
     ajax.send(JSON.stringify(req))
     ajax.onreadystatechange = function() {
         if(ajax.readyState === 4 && ajax.status === 200) {
-
+            getCountProduct();
         }
     }
 }
@@ -135,3 +135,17 @@ function createRequest(name, quantity) {
     }
 }
 /*----------------------------------------------------------------------------------------------*/
+
+/*Получаем количество продуктов в корзине*/
+function getCountProduct() {
+    let countProductSpan = document.getElementById('countProdInBasket');
+    let ajax = new XMLHttpRequest();
+    ajax.open('GET', 'http://localhost:8880/basketServ/getProductsByCookie', true);
+    ajax.send();
+    ajax.onreadystatechange = function() {
+        if(ajax.readyState === 4 && ajax.status === 200) {
+            let resp = JSON.parse(ajax.responseText);
+            countProductSpan.innerHTML = resp.products.length;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-package com.sergeev.visitcard.web.model.pg2;
+package com.sergeev.visitcard.web.model.crud;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
