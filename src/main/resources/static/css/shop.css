@@ -9,6 +9,8 @@
     text-align: right;
 }
 
-.body_basket_pg div input{
-    /*background-color: red;*/
+.countProducts{
+    margin-right: -70px;
+    color: blue;
+    font-weight: bold;
 }

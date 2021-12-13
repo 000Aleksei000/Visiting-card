@@ -46,11 +46,11 @@ public class CaptchaGen {
 
 
     private String getRandomString(int length) {
-        String str = "abcdefghjklmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
+        String str = "abcdefghjkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ0123456789";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < length; i++) {
-            int number = random.nextInt(60);
+            int number = random.nextInt(59);
             sb.append(str.charAt(number) + " ");
         }
         return sb.toString();

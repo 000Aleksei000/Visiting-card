@@ -26,8 +26,8 @@ public class CaptchaServController {
     @GetMapping(value = "/getCaptcha" , produces = "application/json")
     public String getCaptcha(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        System.out.println(session.getAttribute("captcha"));
-        return "sfdadfadfs";
+        String captcha = (String) session.getAttribute("captcha");
+        return "{\"code\":\"" + captcha.replaceAll(" ","") + "\"}";
     }
 
     @GetMapping("/getImg")

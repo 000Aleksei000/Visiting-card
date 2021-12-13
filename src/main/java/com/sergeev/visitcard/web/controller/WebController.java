@@ -29,14 +29,12 @@ public class WebController {
     MappingService mappingService;
     BasketService basketService;
     LoggerServ loggerService;
-    CaptchaGen captchaGen;
 
     @Autowired
     public WebController(MappingService mappingService, BasketService basketService, LoggerServ loggerService, CaptchaGen captchaGen) {
         this.mappingService = mappingService;
         this.basketService = basketService;
         this.loggerService = loggerService;
-        this.captchaGen = captchaGen;
     }
 
     /*Начало нормальной главной страницы*/
@@ -108,7 +106,6 @@ public class WebController {
     public ModelAndView captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("captcha");
-//        addCookieForCaptcha(request, response);
         return modelAndView;
     }
 
@@ -156,22 +153,4 @@ public class WebController {
             loggerService.saveLog(cookie.getValue(), log);
         }
     }
-
-//    public void addCookieForCaptcha(HttpServletRequest request, HttpServletResponse response) {
-//        boolean flag = true;
-//        Cookie[] requestCookies = request.getCookies();
-//        if (requestCookies != null) {
-//            for (Cookie cookie : requestCookies) {
-//                if (cookie.getName().equals("cookieForCaptcha")) {
-//                    flag = false;
-//                }
-//            }
-//        }
-//        if (flag) {
-//            Cookie cookie = new Cookie("cookieForCaptcha", UUID.randomUUID().toString());
-//            response.addCookie(cookie);
-//        }
-//    }
-
-
 }
