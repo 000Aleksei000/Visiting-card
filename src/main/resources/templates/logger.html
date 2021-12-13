@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th = http://www.thymeleaf.org>
 <head>
     <meta charset="UTF-8">
-    <title>basket</title>
+    <title>logger</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap');
     </style>
     <link rel="stylesheet" href="css/mainPage.css">
-    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" href="css/logger.css">
 </head>
 <body>
 
@@ -28,11 +28,15 @@
 
 
     <div class="description" id = "interactive">
-        <span class="basketInfo">У вас в корзине имеется:</span>
-        <div id = 'basketList' class="basketList">
-
-        </div>
-
+        <p>Тут реализован простой логер в котором вы можете пооставлять заметки для себя, но не через JS  через таймлиф на чистой джаве, по этому в методе пост когда вы
+        отправляете сообщение присутствует редирект на гет метод, что бы страница казалась живой</p>
+        <form action="/logger" method="post">
+            <input type="text" name="Log"><br>
+            <input type="submit" value="Добавить">
+        </form>
+        <ul th:each="log : ${Logs}">
+            <li th:text="${log.getLog()}"></li>
+        </ul>
     </div>
 </div>
 
@@ -42,4 +46,4 @@
 </body>
 </html>
 
-<script type="text/javascript" src="js/basket.js"></script>
+<script type="text/javascript" src="js/logger.js"></script>
