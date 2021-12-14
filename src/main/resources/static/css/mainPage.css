@@ -78,7 +78,7 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 .info div {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Times New Roman", sans-serif;
     font-weight: 300;
     font-size: 15px;
     margin: 10px 0 0 30px;
@@ -86,12 +86,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 .info p{
+    font-family: "Times New Roman", sans-serif;
     display: inline-block;
     margin: 15px 0 30px 30px;
 }
 
 .description {
-    font-family: 'M PLUS 1 Code', sans-serif;
+    font-family: 'Times New Roman' , sans-serif;
     font-weight: 300;
     font-size: 17px;
 }
