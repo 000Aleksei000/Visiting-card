@@ -10,7 +10,7 @@ function validateCaptcha(evt) {
     let captchaInpStr = captchaInput.value;
     captchaInput.value = "";
     let xhr = new XMLHttpRequest();
-    xhr.open("GET" , 'http://localhost:8880/captcha/getCaptcha')
+    xhr.open("GET" , '/captcha/getCaptcha')
     xhr.send();
     xhr.onreadystatechange = function() {
         if(xhr.readyState === 4 && xhr.status === 200) {

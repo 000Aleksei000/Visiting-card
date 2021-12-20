@@ -26,7 +26,7 @@ function addProductInBasket(evt) {
     let req = createRequest(name)
     //
     let ajax = new XMLHttpRequest();
-    ajax.open('POST', 'http://localhost:8880/basketServ/deleteFromBasket', true);
+    ajax.open('POST', '/basketServ/deleteFromBasket', true);
     ajax.setRequestHeader('Content-type', 'application/json')
     ajax.send(JSON.stringify(req))
     ajax.onreadystatechange = function() {
@@ -53,7 +53,7 @@ function addProductInBasket(evt) {
 
 function fillingGrid() {
     let ajax = new XMLHttpRequest();
-    ajax.open('GET', 'http://localhost:8880/basketServ/getProductsByCookie', true);
+    ajax.open('GET', '/basketServ/getProductsByCookie', true);
     ajax.send();
     ajax.onreadystatechange = function() {
         if(ajax.readyState === 4 && ajax.status === 200) {

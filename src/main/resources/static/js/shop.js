@@ -13,7 +13,7 @@ basketImg.addEventListener('click', goToBasket)
 
 
 function goToBasket(evt) {
-    window.location = 'http://localhost:8880/basket';
+    window.location = '/basket';
 }
 
 getCountProduct();
@@ -46,7 +46,7 @@ getCountProduct();
 /*Заполняем страничку тем что есть в бд!!!*/
 function fillingGrid() {
     let ajax = new XMLHttpRequest();
-    ajax.open('GET', 'http://localhost:8880/basketServ/getProductsList', true);
+    ajax.open('GET', '/basketServ/getProductsList', true);
     ajax.send();
     ajax.onreadystatechange = function() {
         if(ajax.readyState === 4 && ajax.status === 200) {
@@ -117,7 +117,7 @@ function addProductInBasket(evt) {
     let req = createRequest(name, quantity)
 
     let ajax = new XMLHttpRequest();
-    ajax.open('POST', 'http://localhost:8880/basketServ/addProductToCostumer', true);
+    ajax.open('POST', '/basketServ/addProductToCostumer', true);
     ajax.setRequestHeader('Content-type', 'application/json')
     ajax.send(JSON.stringify(req))
     ajax.onreadystatechange = function() {
@@ -140,7 +140,7 @@ function createRequest(name, quantity) {
 function getCountProduct() {
     let countProductSpan = document.getElementById('countProdInBasket');
     let ajax = new XMLHttpRequest();
-    ajax.open('GET', 'http://localhost:8880/basketServ/getProductsByCookie', true);
+    ajax.open('GET', '/basketServ/getProductsByCookie', true);
     ajax.send();
     ajax.onreadystatechange = function() {
         if(ajax.readyState === 4 && ajax.status === 200) {

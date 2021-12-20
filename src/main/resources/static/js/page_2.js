@@ -30,7 +30,7 @@
         getInputValue();
         let people = createPeople(name, lastName, age, town, country);
         let ajax = new XMLHttpRequest();
-        ajax.open("PUT", "http://localhost:8880/service/savePeople", true);
+        ajax.open("PUT", "/service/savePeople", true);
         ajax.setRequestHeader('Content-type', 'application/json');
         ajax.send(JSON.stringify(people));
         ajax.addEventListener('readystatechange', function () {

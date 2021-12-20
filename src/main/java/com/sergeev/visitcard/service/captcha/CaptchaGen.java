@@ -1,8 +1,6 @@
 package com.sergeev.visitcard.service.captcha;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
+
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Random;
@@ -32,8 +29,13 @@ public class CaptchaGen {
         String captcha = getRandomString(7);
         g2.drawString(captcha, 20,25);
 
-        HttpSession session = request.getSession();
-        session.setAttribute("captcha" , captcha);
+        HttpSession session = request.getSession(true);
+        try {
+            session.setAttribute("captcha", captcha);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
 
         try {
             OutputStream outputStream = response.getOutputStream();

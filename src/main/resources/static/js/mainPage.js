@@ -33,7 +33,7 @@ function loadPage(url, selector) {
     request(new XMLHttpRequest());
 
     function request(xhr) {
-        xhr.open('GET', 'http://localhost:8880/' + url, true);
+        xhr.open('GET', '/' + url, true);
         xhr.send();
         xhr.onreadystatechange = function() {
             if(xhr.readyState === 4 && xhr.status === 200) {
